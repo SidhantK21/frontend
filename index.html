@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <style>
+     body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./src/images/final.png');
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat;
+    padding: 8px;
+    /* overflow-y: auto; */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    
+    /* Add the following properties */
+    background-attachment: fixed; /* Fixed background image */
+    width: 100%; /* Ensure the body takes up the entire viewport width */
+    height: 100%; /* Ensure the body takes up the entire viewport height */
+    box-sizing: border-box; 
+    }
+    
+    
+  </style> 
+  <body>
+    <div class="content">
+      <div id="root"></div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
