@@ -19,7 +19,7 @@ export const NavigationBar = () => {
                     </div>
                 </div>
                 <div className="navbar-center">
-                <a className="btn btn-ghost text-xl font-bold text-sky-50 ">Remote Desk Developer</a>
+                <a className="btn btn-ghost text-xl font-bold text-sky-50 "></a>
                 </div>
                 <div className="navbar-end">
                     {/* Using the Font Awesome search icon */}
