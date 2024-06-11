@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
       setPop(true);
     }, 1000);
   };
-  
+
   const handleDownload = () => {
     // Create a link element
     const link = document.createElement('a');
@@ -84,6 +84,7 @@ const Footer: React.FC = () => {
   try {
     if (!userName.trim() || !emailAddress.trim() || !details.trim()) {
       setContactFormError("Please fill in all the fields.");
+      console.log(contactFormError);
       return;
     }
     
