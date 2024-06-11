@@ -3,9 +3,13 @@ import { Tabs } from "./tabs";
 import PawCure from "../contentProject/pawcure";
 import Wndr from "../contentProject/wandr";
 import Newsweb from "../contentProject/newsWeb";
+import { useScroll } from "../context/scrollcontext";
+import { useScrollMob } from "../context/scrollforMobile";
 
 export const Hero = () => {
-  
+
+  const {projectsectionMob}=useScrollMob();
+  const { projectsection} = useScroll();
   const tabs = [
     {
       title: "PawCure",
@@ -66,7 +70,7 @@ export const Hero = () => {
   return (
     // this is the project section for the small screens 
 <>
-<div className="w-full h-full md:hidden flex items-center justify-center"> {/* Hide on screens larger than md (768px) */}
+<div ref={projectsectionMob} className="w-full h-full md:hidden flex items-center justify-center"> {/* Hide on screens larger than md (768px) */}
   <div className="flex flex-col items-center py-16">
     <div className="font-bold text-lg text-white mb-8">My Work</div>
 
@@ -94,8 +98,6 @@ export const Hero = () => {
         dolore minima est architecto officiis consectetur. Nam praesentium
       </motion.div>
     </div>
-
-
 
 
     <div className="flex flex-wrap justify-center mb-10">
@@ -148,11 +150,9 @@ export const Hero = () => {
 
 
 
-
-
     {/* this project section will be for the md and lg screens only  */}
       
-    <div className="hidden md:block h-[20rem] md:h-[40rem] [perspective:1000px] relative flex-col mx-auto w-full max-w-3xl items-start justify-start my-40 ">
+    <div ref={projectsection} className="hidden md:block h-[20rem] md:h-[40rem] [perspective:1000px] relative flex-col mx-auto w-full max-w-3xl items-start justify-start my-40 ">
     <Tabs tabs={tabs} />
     </div>
 

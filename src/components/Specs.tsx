@@ -1,11 +1,15 @@
 "use client";
 // import React from "react";
+import Man from "../images/Man.png"
+import Manclient from "../images/Manclient.png"
 import { AnimatedTooltip } from "../components/ui/tooltip";
 import Xd from "../images/Xd.jpg";
 import aiml from "../images/aiml.jpg";
 import code from "../images/code.jpg";
 import freelancer from "../images/freelancer.jpg";
 import programmer from "../images/programmer.jpg";
+import { useScrollMob } from "../context/scrollforMobile";
+
 const people = [
   {
     id: 1,
@@ -41,12 +45,14 @@ const people = [
 ];
 
 export function Spec() {
+const {techSkills}=useScrollMob();
+  
   return (
     <>
     
     {/* specs section for the smaller screens  */}
-    <span className="block md:hidden text-center text-white mt-24 font-bold text-lg">My Specializations</span>
-    <div className="md:hidden flex flex-row items-center justify-center mb-10 w-full mt-16">
+    <span   className="block md:hidden text-center text-white mt-24 font-bold text-lg">My Specializations</span>
+    <div  ref={techSkills} className="md:hidden flex flex-row items-center justify-center mb-10 w-full mt-16">
       <AnimatedTooltip items={people} />
     </div>
 
@@ -62,8 +68,10 @@ export function Spec() {
   <div className="chat chat-start">
     <div className="chat-image avatar">
       <div className="w-10 rounded-full">
-        {/* add ur own image here  */}
-        <img alt="Tailwind CSS chat bubble component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        {/* add any image here  */}
+
+        <img alt="Tailwind CSS chat bubble component" src={Manclient} />
+        
       </div>
     </div>
     <div className="chat-header">
@@ -78,8 +86,9 @@ export function Spec() {
   <div className="chat chat-end">
     <div className="chat-image avatar">
       <div className="w-10 rounded-full">
+
         {/* add your own image  */}
-        <img alt="Tailwind CSS chat bubble component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <img alt="Tailwind CSS chat bubble component" src={Man} />
       </div>
     </div>
     <div className="chat-header">

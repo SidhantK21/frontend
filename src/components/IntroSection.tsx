@@ -2,9 +2,14 @@ import { ButtonsCard } from "./ButtonsCard";
 import "../fonts/fonts.css";
 import {  useTypewriter,Cursor } from 'react-simple-typewriter'
 import { motion } from "framer-motion";
-import dpPic from "../images/dpPic.jpg"
+import { useScroll } from "../context/scrollcontext";
+import { useScrollMob } from "../context/scrollforMobile";
+
+// import dpPic from "../images/dpPic.jpg"
 
 export const Intro = () => {
+  const {aboutMob}=useScrollMob();
+  const {homesection}=useScroll();
   const [text]=useTypewriter({
       words:['Developer','Freelancer','Designer','AI&ML Learner','Programmer'],
       loop:true,
@@ -12,9 +17,24 @@ export const Intro = () => {
       deleteSpeed:50
   })
 
+  const handleDownload = () => {
+    // Create a link element
+    const link = document.createElement('a');
+    // add the link to the resume file in the folder and write it here so that i resume can be downloaded 
+    link.href = 'src/assets/files/exampleDoc.pdf';
+    // Set the download attribute to suggest a filename
+    link.download = 'exampleDoc.pdf';
+    // Append the link to the body
+    document.body.appendChild(link);
+    // Programmatically click the link to trigger the download
+    link.click();
+    // Remove the link from the document
+    document.body.removeChild(link);
+  };
+
   return (
     <>
-    <div className="block md:hidden h-56 mt-10 ml-2 mr-2 ">
+    <div ref={aboutMob} className="block md:hidden h-56 mt-10 ml-2 mr-2 ">
         <div className="h-8 text-white font-bold text-2xl mt-1 ml-1 ">
             <span className="amaranth-bold">Sidhant Singh Rathore</span>
         </div>
@@ -40,13 +60,18 @@ export const Intro = () => {
           <Cursor/>
         </span>
       </div>
+
       {/* Add something about me in the below div */}
-      <div className="w-80 mt-3">
+
+      <div ref={homesection} className="w-80 mt-3">
         <section className="text-white">
           I am a full stack web developer, proficient programmer, and a freelancer who can make modern real-world applications with the desired specifications and functionalities
         </section>
       </div>
-      <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-5">
+      
+      <button 
+      onClick={handleDownload}
+      className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mt-5">
         Click for Resume
       </button>
     </div>
@@ -59,7 +84,9 @@ export const Intro = () => {
     animate={{ opacity: 1 }} // Animate to full opacity and original position
     transition={{ delay: 1, duration: 3 }} // Add delay and duration for a smooth animation
   >
-    <img src={dpPic} className="w-full h-full rounded-full " alt="Profile" />
+    {/* style this image according to the screens  */}
+    
+    {/* <img src={dpPic} className="w-full h-full rounded-full " alt="Profile" /> */}
   </motion.div>
 </div>
 

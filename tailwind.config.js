@@ -29,7 +29,7 @@ module.exports = {
     },
   }, // Added a comma here
   daisyui: {
-    themes: false,
+    themes: ["light", "dark", "cupcake"],
     darkTheme: "light",
     base: true,
     styled: true,

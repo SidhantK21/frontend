@@ -4,14 +4,16 @@ import { Hero } from './components/Herosection';
 import { Spec } from './components/Specs';
 import { Edu } from './components/Education';
 import Footer from './components/footer';
+import { useScrollMob } from "./context/scrollforMobile";
 import './App.css';
 
 
 
 function App() {
+  const {homesectionMob}=useScrollMob();
   return (
     <>
-      <div className=''>
+      <div  ref={homesectionMob}>
         <NavigationBar />
         <Intro />
       </div>
@@ -26,6 +28,8 @@ function App() {
       <div className='mt-24'>
         <Footer />
       </div>
+
+     
     </>
   )
 }
