@@ -42,6 +42,12 @@ export const NavigationBar = () => {
                 </div>
                 <div className="navbar-end flex items-center">
                     <button className="btn btn-ghost btn-circle mr-2">
+                <div className="navbar-center">
+                <a className="btn btn-ghost text-xl font-bold text-sky-50 "></a>
+                </div>
+                <div className="navbar-end">
+                    {/* Using the Font Awesome search icon */}
+                    <button className="btn btn-ghost btn-circle">
                         <FontAwesomeIcon icon={faSearch} />
                     </button>
                 </div>
