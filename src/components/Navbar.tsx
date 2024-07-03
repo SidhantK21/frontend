@@ -9,8 +9,9 @@ export const NavigationBar = () => {
     const [sideBar, setSidebar] = useState(false);
     const [isSticky, setIsSticky] = useState(false);
 
-    const {homesectionMob,projectsectionMob , techSkills, contactsectionMob,aboutMob}=useScrollMob();
+    const { homesectionMob, projectsectionMob, techSkills, contactsectionMob, aboutMob } = useScrollMob();
     const { homesection, projectsection, contactsection } = useScroll();
+
     useEffect(() => {
         const stickNavbar = () => {
             const windowHeight = window.scrollY;
@@ -28,8 +29,6 @@ export const NavigationBar = () => {
         setSidebar(!sideBar);
     };
 
-
-
     return (
         <>
             {/* Mobile Navbar */}
@@ -41,15 +40,15 @@ export const NavigationBar = () => {
                     <a className="btn btn-ghost text-xl font-bold text-sky-50 ml-2"></a>
                 </div>
                 <div className="navbar-end flex items-center">
-                    <button className="btn btn-ghost btn-circle mr-2">
-                <div className="navbar-center">
-                <a className="btn btn-ghost text-xl font-bold text-sky-50 "></a>
-                </div>
-                <div className="navbar-end">
-                    {/* Using the Font Awesome search icon */}
-                    <button className="btn btn-ghost btn-circle">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
+                    <div className="navbar-center">
+                        <a className="btn btn-ghost text-xl font-bold text-sky-50"></a>
+                    </div>
+                    <div className="navbar-end">
+                        {/* Using the Font Awesome search icon */}
+                        <button className="btn btn-ghost btn-circle">
+                            <FontAwesomeIcon icon={faSearch} />
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -69,15 +68,11 @@ export const NavigationBar = () => {
                         />
                     </div>
                     <ul className="menu p-2 text-white rounded-box w-18">
-                        <li><a onClick={()=>{homesectionMob.current?.scrollIntoView({ behavior: 'smooth' })}}>Home</a></li>
-
-                        <li><a onClick={()=>{projectsectionMob.current?.scrollIntoView({ behavior: 'smooth' })}}>Projects</a></li>
-
-                        <li><a onClick={()=>{aboutMob.current?.scrollIntoView({ behavior: 'smooth' })}}>About</a></li>
-
-                        <li><a onClick={()=>{techSkills.current?.scrollIntoView({ behavior: 'smooth' })}}>Tech Skills</a></li>
-
-                        <li><a onClick={()=>{contactsectionMob.current?.scrollIntoView({ behavior: 'smooth' })}}>Contact</a></li>
+                        <li><a onClick={() => { homesectionMob.current?.scrollIntoView({ behavior: 'smooth' }) }}>Home</a></li>
+                        <li><a onClick={() => { projectsectionMob.current?.scrollIntoView({ behavior: 'smooth' }) }}>Projects</a></li>
+                        <li><a onClick={() => { aboutMob.current?.scrollIntoView({ behavior: 'smooth' }) }}>About</a></li>
+                        <li><a onClick={() => { techSkills.current?.scrollIntoView({ behavior: 'smooth' }) }}>Tech Skills</a></li>
+                        <li><a onClick={() => { contactsectionMob.current?.scrollIntoView({ behavior: 'smooth' }) }}>Contact</a></li>
                     </ul>
                 </div>
             </motion.div>
@@ -96,16 +91,9 @@ export const NavigationBar = () => {
                         <div className='flex ml-48 gap-10 font-bold'>
                             <button onClick={() => homesection.current?.scrollIntoView({ behavior: 'smooth' })} className='w-24 h-12 rounded-lg transition duration-500 hover:bg-slate-400 '>Home</button>
                             <button onClick={() => projectsection.current?.scrollIntoView({ behavior: 'smooth' })} className='w-24  h-12 rounded-lg transition duration-500 hover:bg-slate-400'>Project</button>
-                            <button onClick={() => contactsection.current?.scrollIntoView({ behavior: 'smooth' })}  className='w-24  h-12 rounded-lg transition duration-500 hover:bg-slate-400'>Contact</button>
+                            <button onClick={() => contactsection.current?.scrollIntoView({ behavior: 'smooth' })} className='w-24  h-12 rounded-lg transition duration-500 hover:bg-slate-400'>Contact</button>
                         </div>
                     </div>
-
-                    {/* Theme toggle */}
-                    {/* <label className="cursor-pointer grid place-items-center ml-24 ">
-                        <input type="checkbox" value="synthwave" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" />
-                        <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" /></svg>
-                        <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                    </label> */}
                 </div>
             </div>
         </>

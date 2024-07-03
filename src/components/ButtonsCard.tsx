@@ -8,9 +8,9 @@ const handleDownload = () => {
     // Create a link element
     const link = document.createElement('a');
     // add the link to the resume file in the folder and write it here so that i resume can be downloaded 
-    link.href = 'src/assets/files/exampleDoc.pdf';
+    link.href = '/resume.pdf';
     // Set the download attribute to suggest a filename
-    link.download = 'exampleDoc.pdf';
+    link.download = 'resume.pdf';
     // Append the link to the body
     document.body.appendChild(link);
     // Programmatically click the link to trigger the download

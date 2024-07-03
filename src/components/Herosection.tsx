@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Tabs } from "./tabs";
+import comp from "../images/comp.png"
 import PawCure from "../contentProject/pawcure";
 import Wndr from "../contentProject/wandr";
 import Newsweb from "../contentProject/newsWeb";
@@ -12,11 +13,11 @@ export const Hero = () => {
   const { projectsection} = useScroll();
   const tabs = [
     {
-      title: "PawCure",
+      title: "Expresser The Companion",
       value: "ngo web",
       content: (
     <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg py-32 ">
-        <p className="">PawCure</p>
+        <p className="">Expresser</p>
       <PawCure/>
     </div>
 
@@ -74,16 +75,22 @@ export const Hero = () => {
   <div className="flex flex-col items-center py-16">
     <div className="font-bold text-lg text-white mb-8">My Work</div>
 
-    <div className="flex flex-wrap justify-center mb-10">
+    <div className="flex flex-wrap justify-center mb-10 ">
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
-        className="w-64 border-2 h-48 rounded-lg mx-4 mb-6 bg-gray-800 relative"
+        className="w-64 border border-gray-300 h-48 rounded-lg mx-4 mb-6  relative"
       >
-        {/* Dummy project content */}
-        <div className="absolute inset-0 flex items-center justify-center text-white">
-          Project 1
+        {/* Project content  */}
+        <div className="absolute inset-0 flex items-center  justify-center text-white">
+        <img
+          src={comp}
+          alt="Expresser The Companion"
+          className="object-cover rounded-lg shadow-lg"
+          style={{ height: '100%', width: '100%' }}
+        />
+
         </div>
       </motion.div>
       {/* Description of the project */}
@@ -93,9 +100,8 @@ export const Hero = () => {
         transition={{ delay: 0.5 }}
         className="w-64 text-gray-300 mx-4"
       >
-        <h1 className="font-bold text-lg">Heading</h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-        dolore minima est architecto officiis consectetur. Nam praesentium
+        <h1 className="font-bold text-lg">Expresser The Companion</h1>
+        A companion with which you can share anything without disclosing your identity.
       </motion.div>
     </div>
 

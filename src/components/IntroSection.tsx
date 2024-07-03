@@ -21,9 +21,10 @@ export const Intro = () => {
     // Create a link element
     const link = document.createElement('a');
     // add the link to the resume file in the folder and write it here so that i resume can be downloaded 
-    link.href = 'src/assets/files/exampleDoc.pdf';
+    // in this the download able file should be in the public/ file 
+    link.href = '/resume.pdf';
     // Set the download attribute to suggest a filename
-    link.download = 'exampleDoc.pdf';
+    link.download = 'resume.pdf';
     // Append the link to the body
     document.body.appendChild(link);
     // Programmatically click the link to trigger the download
@@ -42,7 +43,7 @@ export const Intro = () => {
             I am a full stack web developer, designer, programmer, freelancer.
         </div>
         <div className="mt-10">
-            <ButtonsCard />
+            <ButtonsCard  />
         </div>
     </div>
     {/* intro for the bigger screens  */}
